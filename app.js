@@ -40,7 +40,7 @@ app.use(function (err, req, res, next) {
     res.render("error");
 });
 
-app.listen(4000, function () {
+app.listen(3000, function () {
     console.log("listening on port 4000 http://localhost:4000/arenaactivity");
 });
 
