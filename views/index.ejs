@@ -2,119 +2,189 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-        let url = "https://tutoring.fjbcgroup.com/";
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    let url = "https://tutoring.fjbcgroup.com/";
+  </script>
+  <script src="//code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+    crossorigin="anonymous">
     </script>
-    <script src="//code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
-        crossorigin="anonymous">
-        </script>
-    <script src="//code.jquery.com/ui/1.13.2/jquery-ui.min.js"
-        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous">
-        </script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css">
-    <title></title>
+  <script src="//code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+    integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous">
+    </script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css">
+  <title>
+    <%=title%>
+  </title>
 
-    <style>
-        .required::before {
-            content: '*';
-            color: red;
-        }
-    </style>
+  <style>
+    .required::before {
+      content: '*';
+      color: red;
+    }
+  </style>
 </head>
 
 <body>
-    <div class="container p-3">
-        <div class="border p-1">
-            <h5 class="text-center">2024學吧盃傳說現場對決大賽報名表</h5>
-            <div class="p-1" style="font-size: 12px;">
-                <p>1.　團隊報名需5人正選（可多安排1人候補）</p>
-                <p>2.　未達五人或個人報名於比賽當天113年7月27日(星期六) 上午 10:00，進行配對</p>
-                <p>3. 所有報名同學都必須填寫表單，以利後續統計整理</p>
-                <p>4. 比賽隊伍未達 8隊取消辦理</p>
-                <p>5. 報名截止日期:113年7月25日(四)</p>
+  <div class="container p-3">
+    <div class="border p-1">
+      <h5 class="text-center">2024學吧盃傳說現場對決大賽報名表</h5>
+      <div class="p-1" style="font-size: 12px;">
+        <p>1.　團隊報名需5人正選（可多安排1人候補）</p>
+        <p>2.　未達五人或個人報名於比賽當天113年7月27日(星期六) 上午 10:00，進行配對</p>
+        <p>3. 所有報名同學都必須填寫表單，以利後續統計整理</p>
+        <p>4. 比賽隊伍未達 8隊取消辦理</p>
+        <p>5. 報名截止日期:113年7月25日(四)</p>
+      </div>
+      <div class="">
+        <div class="p-1">
+          <div class="input-group">
+            <span class="input-group-text required">隊名</span>
+            <input type="text" class="form-control" id="teamName" placeholder="若為個人報名無隊名請填＂無＂">
+          </div>
+          <div class="input-group">
+            <span class="input-group-text required">是否為隊長</span>
+            <div type="text" class="form-control">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="leader" id="yes" value="1">
+                <label class="form-check-label" for="yes">是</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="leader" id="no" value="0" checked>
+                <label class="form-check-label" for="no">否</label>
+              </div>
             </div>
-            <div class="">
-                <div class="p-1">
-                    <div class="input-group">
-                        <span class="input-group-text required" id="">隊名</span>
-                        <input type="text" class="form-control" placeholder="若為個人報名無隊名請填＂無＂">
-                    </div>
-                    <div class="input-group">
-                        <span class="input-group-text required" id="">是否為隊長</span>
-                        <div type="text" class="form-control">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                <label class="form-check-label" for="flexRadioDefault1">是</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
-                                    checked>
-                                <label class="form-check-label" for="flexRadioDefault2">否</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="input-group">
-                        <span class="input-group-text required" id="">遊戲內 ID</span>
-                        <input type="text" class="form-control">
-                    </div>
-                </div>
-    
-                <div class="p-1">
-                    <div class="input-group">
-                        <span class="input-group-text required" id="">就讀學校</span>
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="input-group">
-                        <span class="input-group-text required" id="">就讀年級</span>
-                        <select class="form-select" id="inputGroupSelect01">
-                            <option selected>國中七年級</option>
-                            <option value="1">國中八年級</option>
-                            <option value="2">國中九年級</option>
-                            <option value="3">高中一年級</option>
-                            <option value="3">高中二年級</option>
-                          </select>
-                    </div>
-                    <div class="input-group">
-                        <span class="input-group-text required" id="">身份證字號</span>
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="input-group">
-                        <span class="input-group-text required" id="">學生證號碼</span>
-                        <input type="text" class="form-control">
-                    </div>
-    
-                    <div class="input-group">
-                        <span class="input-group-text required" id="">Open ID</span>
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="input-group">
-                        <span class="input-group-text required" id="">聯絡電話</span>
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="input-group">
-                        <span class="input-group-text required" id="">電子郵件</span>
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="input-group">
-                        <span class="input-group-text required" id="">Line ID</span>
-                        <input type="text" class="form-control" placeholder="或是加官LINE 後續聯絡">
-                    </div>
-                </div>
-                <div class="d-grid gap-2 p-3">
-                    <button class="btn btn-success" type="button">提交</button>
-                </div>
-            </div>
+          </div>
+          <div class="input-group">
+            <span class="input-group-text required">遊戲內 ID</span>
+            <input type="text" class="form-control" id="gameName">
+          </div>
         </div>
+
+        <div class="p-1">
+          <div class="input-group">
+            <span class="input-group-text required">就讀學校</span>
+            <input type="text" class="form-control" id="school">
+          </div>
+          <div class="input-group">
+            <span class="input-group-text required">就讀年級</span>
+            <select class="form-select" id="gread">
+              <option value="國中七年級" selected>國中七年級</option>
+              <option value="國中八年級">國中八年級</option>
+              <option value="國中九年級">國中九年級</option>
+              <option value="高中一年級">高中一年級</option>
+              <option value="高中二年級">高中二年級</option>
+            </select>
+          </div>
+          <!-- <div class="input-group">
+            <span class="input-group-text required">身份證字號</span>
+            <input type="text" class="form-control" id="ID">
+          </div>
+          <div class="input-group">
+            <span class="input-group-text required">學生證號碼</span>
+            <input type="text" class="form-control" id="studentID">
+          </div>
+
+          <div class="input-group">
+            <span class="input-group-text required">Open ID</span>
+            <input type="text" class="form-control" id="openID">
+          </div> -->
+          <div class="input-group">
+            <span class="input-group-text required">聯絡電話</span>
+            <input type="text" class="form-control" id="tel">
+          </div>
+          <div class="input-group">
+            <span class="input-group-text">電子郵件</span>
+            <input type="text" class="form-control" id="email">
+          </div>
+          <!-- <div class="input-group">
+            <span class="input-group-text required">Line ID</span>
+            <input type="text" class="form-control" placeholder="或是加官LINE 後續聯絡" id="LineID">
+          </div> -->
+        </div>
+        <div class="d-grid gap-2 p-3">
+          <button class="btn btn-success" type="button" onclick="submit()">提交</button>
+        </div>
+      </div>
     </div>
+  </div>
 </body>
+
+<script>
+  async function submit() {
+    const teamName = $("#teamName").val();
+    const gameName = $("#gameName").val();
+    const school = $("#school").val();
+    const gread = $("#gread").val();
+    const tel = $("#tel").val();
+    const email = $("#email").val();
+    const leader = $("input[name='leader']:checked").val();
+
+    if (!teamName) {
+      alert("請填寫隊伍姓名");
+      return;
+    }
+
+    if (!gameName) {
+      alert("請填寫遊戲姓名");
+      return;
+    }
+
+    if (!school) {
+      alert("請填寫學校姓名");
+      return;
+    }
+
+    if (!gread) {
+      alert("請填寫學生年級");
+      return;
+    }
+
+    if (!tel) {
+      alert("請填寫電話");
+      return;
+    }
+
+    const data = {
+      teamName: teamName,
+      gameName: gameName,
+      school: school,
+      gread: gread,
+      tel: tel,
+      email: email,
+      leader: leader
+    };
+
+    const config = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      }
+      , body: JSON.stringify(data)
+    };
+
+    const response = await fetch('./arenaactivity', config);
+    const res = await response.json();
+    if (response.ok) {
+      alert("報名成功！！");
+      window.location.reload();
+    } else {
+      if (res.code === '23505') {
+        alert("遊戲名稱已存在，報名失敗！！");
+      } else {
+        alert("系統網路異常，請聯繫客服人員！");
+      }
+    }
+  }
+
+</script>
 
 </html>
