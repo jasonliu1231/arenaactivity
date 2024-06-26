@@ -17,11 +17,10 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
+// app.use(express.static(path.join(__dirname, "public")));
+// app.use("/", indexRouter);
 app.use("/arenaactivity", express.static(path.join(__dirname, "public")));
-
-app.use("/", indexRouter);
-// app.use("/arenaactivity", indexRouter);
+app.use("/arenaactivity", indexRouter);
 app.use("/users", usersRouter);
 
 // catch 404 and forward to error handler
@@ -40,7 +39,7 @@ app.use(function (err, req, res, next) {
     res.render("error");
 });
 
-app.listen(3000, function () {
+app.listen(4000, function () {
     console.log("listening on port 4000 http://localhost:4000/arenaactivity");
 });
 
